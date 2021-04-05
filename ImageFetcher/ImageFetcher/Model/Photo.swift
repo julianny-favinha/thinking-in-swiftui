@@ -10,8 +10,8 @@ import Foundation
 struct Photo: Codable {
     let id: String
     let author: String
-    let width: Int
-    let height: Int
+    let width: Float
+    let height: Float
     let url: String
     let download_url: String
 }

@@ -9,12 +9,12 @@ import Foundation
 import SwiftUI
 
 struct ContentView: View {
-    @State private var photos: [Photo] = []
+    @ObservedObject var remote = Remote()
 
     var body: some View {
         NavigationView {
             List {
-                ForEach(photos, id: \.id) { photo in
+                ForEach(remote.photos ?? [], id: \.id) { photo in
                     NavigationLink(destination: PhotoView(photo: photo), label: {
                         AuthorView(author: photo.author)
                     })
@@ -26,22 +26,7 @@ struct ContentView: View {
     }
 
     func loadData() {
-        guard let url = URL(string: "https://picsum.photos/v2/list") else {
-            print("Invalid URL")
-            return
-        }
-
-        let request = URLRequest(url: url)
-
-        URLSession.shared.dataTask(with: request) { data, response, error in
-            guard let data = data,
-                  let decodedResponse = try? JSONDecoder().decode([Photo].self, from: data) else {
-                print("Request failed")
-                return
-            }
-
-            self.photos = decodedResponse
-        }.resume()
+        remote.loadData(urlString: "https://picsum.photos/v2/list")
     }
 }
 

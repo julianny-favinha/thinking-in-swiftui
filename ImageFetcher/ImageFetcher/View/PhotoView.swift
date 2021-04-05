@@ -14,11 +14,12 @@ struct PhotoView: View {
     @State var image = UIImage()
 
     var body: some View {
-        VStack {
-            Image(uiImage: image)
-                .resizable()
-        }
-        .onAppear(perform: loadData)
+        Image(uiImage: image)
+            .resizable()
+            .aspectRatio(CGFloat(photo.width / photo.height), contentMode: .fit)
+            .cornerRadius(8.0)
+            .padding()
+            .onAppear(perform: loadData)
     }
 
     func loadData() {
