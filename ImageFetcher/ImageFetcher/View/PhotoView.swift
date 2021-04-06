@@ -9,21 +9,28 @@ import Foundation
 import SwiftUI
 
 struct PhotoView: View {
-    let photo: Photo
+    let download_url: String
+    let aspectRatio: Float
 
-    @State var image = UIImage()
+    @State var image: UIImage?
 
     var body: some View {
-        Image(uiImage: image)
-            .resizable()
-            .aspectRatio(CGFloat(photo.width / photo.height), contentMode: .fit)
-            .cornerRadius(8.0)
-            .padding()
-            .onAppear(perform: loadData)
+        Group {
+            if image == nil {
+                ProgressView()
+            } else {
+                Image(uiImage: image ?? UIImage())
+                    .resizable()
+                    .aspectRatio(CGFloat(aspectRatio), contentMode: .fit)
+                    .cornerRadius(8.0)
+                    .padding()
+            }
+        }
+        .onAppear(perform: loadData)
     }
 
     func loadData() {
-        guard let url = URL(string: photo.download_url) else {
+        guard let url = URL(string: download_url) else {
             print("Invalid URL")
             return
         }

@@ -12,8 +12,6 @@ struct AuthorView: View {
     @State var author: String
 
     var body: some View {
-        VStack {
-            Text("\(author)")
-        }
+        Text("\(author)")
     }
 }

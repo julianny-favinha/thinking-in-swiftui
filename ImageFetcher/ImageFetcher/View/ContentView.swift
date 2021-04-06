@@ -13,16 +13,22 @@ struct ContentView: View {
 
     var body: some View {
         NavigationView {
-            List {
-                ForEach(remote.photos ?? [], id: \.id) { photo in
-                    NavigationLink(destination: PhotoView(photo: photo), label: {
-                        AuthorView(author: photo.author)
-                    })
+            Group {
+                if remote.photos == nil {
+                    ProgressView()
+                } else {
+                    List {
+                        ForEach(remote.photos ?? [], id: \.id) { photo in
+                            NavigationLink(destination: PhotoView(download_url: photo.download_url, aspectRatio: photo.width / photo.height), label: {
+                                AuthorView(author: photo.author)
+                            })
+                        }
+                    }
                 }
             }
-            .onAppear(perform: loadData)
             .navigationTitle(Text("Image Fetcher"))
         }
+        .onAppear(perform: loadData)
     }
 
     func loadData() {
