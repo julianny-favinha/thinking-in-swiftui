@@ -14,6 +14,7 @@
 		3A7B3FB7261A9EE7005D15FB /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7B3FB6261A9EE7005D15FB /* Photo.swift */; };
 		3A7B3FBB261AA0CA005D15FB /* PhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7B3FBA261AA0CA005D15FB /* PhotoView.swift */; };
 		3A7B3FBE261AA0DE005D15FB /* AuthorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A7B3FBD261AA0DE005D15FB /* AuthorView.swift */; };
+		3AD0CBA0261DDEB40071005B /* ViewState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AD0CB9F261DDEB40071005B /* ViewState.swift */; };
 		3ADAD574261B3C8D0045913A /* Remote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ADAD573261B3C8C0045913A /* Remote.swift */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +28,7 @@
 		3A7B3FB6261A9EE7005D15FB /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		3A7B3FBA261AA0CA005D15FB /* PhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoView.swift; sourceTree = "<group>"; };
 		3A7B3FBD261AA0DE005D15FB /* AuthorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorView.swift; sourceTree = "<group>"; };
+		3AD0CB9F261DDEB40071005B /* ViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewState.swift; sourceTree = "<group>"; };
 		3ADAD573261B3C8C0045913A /* Remote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Remote.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -85,6 +87,7 @@
 				3A7B3FA8261A9ED0005D15FB /* ContentView.swift */,
 				3A7B3FBA261AA0CA005D15FB /* PhotoView.swift */,
 				3A7B3FBD261AA0DE005D15FB /* AuthorView.swift */,
+				3AD0CB9F261DDEB40071005B /* ViewState.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -167,6 +170,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A7B3FBE261AA0DE005D15FB /* AuthorView.swift in Sources */,
+				3AD0CBA0261DDEB40071005B /* ViewState.swift in Sources */,
 				3A7B3FB7261A9EE7005D15FB /* Photo.swift in Sources */,
 				3A7B3FA9261A9ED0005D15FB /* ContentView.swift in Sources */,
 				3A7B3FA7261A9ED0005D15FB /* ImageFetcherApp.swift in Sources */,

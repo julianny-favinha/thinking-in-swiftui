@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Photo: Codable {
+struct Photo: Identifiable, Codable, Equatable {
     let id: String
     let author: String
     let width: Float

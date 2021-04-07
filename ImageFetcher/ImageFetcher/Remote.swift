@@ -8,7 +8,7 @@
 import Foundation
 
 final class Remote: ObservableObject {
-    @Published var photos: [Photo]?
+    @Published var viewState: ViewState = .loading
 
     func loadData(urlString: String) {
         guard let url = URL(string: urlString) else {
@@ -20,11 +20,12 @@ final class Remote: ObservableObject {
         URLSession.shared.dataTask(with: request) { [weak self] data, response, error in
             guard let data = data,
                   let decodedResponse = try? JSONDecoder().decode([Photo].self, from: data) else {
-                print("Request failed")
+                self?.viewState = .error("Ooops! The request failed. Try again later 😳")
                 return
             }
 
-            self?.photos = decodedResponse
+            // publishing changes from background threads. FIX IT :D
+            self?.viewState = .content(decodedResponse)
         }.resume()
     }
 }

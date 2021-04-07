@@ -14,14 +14,15 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             Group {
-                if remote.photos == nil {
-                    ProgressView()
-                } else {
-                    List {
-                        ForEach(remote.photos ?? [], id: \.id) { photo in
-                            NavigationLink(destination: PhotoView(download_url: photo.download_url, aspectRatio: photo.width / photo.height), label: {
-                                AuthorView(author: photo.author)
-                            })
+                switch remote.viewState {
+                case .loading:
+                     ProgressView()
+                case .error(let message):
+                     Text(message)
+                case .content(let photos):
+                    List(photos) { photo in
+                        NavigationLink(destination: PhotoView(download_url: photo.download_url, aspectRatio: photo.width / photo.height)) {
+                            AuthorView(author: photo.author)
                         }
                     }
                 }
