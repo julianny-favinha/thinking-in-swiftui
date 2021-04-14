@@ -41,13 +41,35 @@ extension View {
 
 struct Knob: View {
     @Binding var value: Double // should be between 0 and 1
+    @Binding var shouldUseCustomColor: Bool
     var pointerSize: CGFloat? = nil
     @Environment(\.knobPointerSize) var envPointerSize
+    @Environment(\.color) var envColor
     @Environment(\.colorScheme) var colorScheme
+
+    var knobColor: Color {
+        if shouldUseCustomColor {
+            return customColor
+        } else {
+            return defaultColor
+        }
+    }
+
+    var customColor: Color {
+        guard let enviromentColor = envColor else {
+            return defaultColor
+        }
+
+        return enviromentColor
+    }
+
+    var defaultColor: Color {
+        return colorScheme == .dark ? Color.white : .black
+    }
 
     var body: some View {
          KnobShape(pointerSize: pointerSize ?? envPointerSize)
-            .fill(colorScheme == .dark ? Color.white : .black)
+            .fill(knobColor)
             .rotationEffect(Angle(degrees: value * 330))
             .onTapGesture {
                 withAnimation(.default) {
@@ -60,25 +82,38 @@ struct Knob: View {
 struct ContentView: View {
     @State var value: Double = 0.5
     @State var knobSize: CGFloat = 0.1
+    @State var colorHue: Double = 0
+    @State var shouldUseCustomColor: Bool = true
 
     var body: some View {
         VStack {
-            Knob(value: $value)
+            Knob(value: $value, shouldUseCustomColor: $shouldUseCustomColor)
                 .frame(width: 100, height: 100)
                 .knobPointerSize(knobSize)
+                .color(Color(hue: colorHue, saturation: 1, brightness: 1))
+
             HStack {
                 Text("Value")
                 Slider(value: $value, in: 0...1)
+
+                Button("Toggle", action: {
+                    withAnimation(.default) {
+                        value = value == 0 ? 1 : 0
+                    }
+                })
             }
+
             HStack {
                 Text("Knob Size")
-                Slider(value: $knobSize, in: 0...0.4)
+                Slider(value: $knobSize, in: 0.1...0.4)
             }
-            Button("Toggle", action: {
-                withAnimation(.default) {
-                    value = value == 0 ? 1 : 0
-                }
-            })
+
+            HStack {
+                Text("Color hue")
+                Slider(value: $colorHue, in: 0...1)
+            }
+
+            Toggle("Custom color", isOn: $shouldUseCustomColor)
         }
     }
 }
