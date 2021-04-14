@@ -1,11 +1,10 @@
 //
 //  ContentView.swift
-//  ThinkingInSwiftUI
+//  Chapter2
 //
-//  Created by Julianny Favinha Donda on 01/04/21.
+//  Created by Julianny Favinha Donda on 14/04/21.
 //
 
-import Foundation
 import SwiftUI
 
 struct ContentView: View {

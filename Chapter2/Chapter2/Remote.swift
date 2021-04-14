@@ -1,8 +1,8 @@
 //
 //  Remote.swift
-//  ImageFetcher
+//  Chapter2
 //
-//  Created by Julianny Favinha Donda on 05/04/21.
+//  Created by Julianny Favinha Donda on 14/04/21.
 //
 
 import Foundation
@@ -24,8 +24,9 @@ final class Remote: ObservableObject {
                 return
             }
 
-            // publishing changes from background threads. FIX IT :D
-            self?.viewState = .content(decodedResponse)
+            DispatchQueue.main.async {
+                self?.viewState = .content(decodedResponse)
+            }
         }.resume()
     }
 }

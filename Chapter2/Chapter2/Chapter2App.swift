@@ -1,14 +1,14 @@
 //
-//  ImageFetcherApp.swift
-//  ImageFetcher
+//  Chapter2App.swift
+//  Chapter2
 //
-//  Created by Julianny Favinha Donda on 04/04/21.
+//  Created by Julianny Favinha Donda on 14/04/21.
 //
 
 import SwiftUI
 
 @main
-struct ImageFetcherApp: App {
+struct Chapter2App: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
