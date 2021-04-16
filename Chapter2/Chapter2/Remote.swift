@@ -7,8 +7,13 @@
 
 import Foundation
 
-final class Remote: ObservableObject {
-    @Published var viewState: ViewState = .loading
+final class Remote<A>: ObservableObject {
+    let parse: (Data) -> A
+    @Published var viewState: ViewState<A> = .loading
+
+    init(parse: @escaping (Data) -> A) {
+        self.parse = parse
+    }
 
     func loadData(urlString: String) {
         guard let url = URL(string: urlString) else {
@@ -19,7 +24,7 @@ final class Remote: ObservableObject {
 
         URLSession.shared.dataTask(with: request) { [weak self] data, response, error in
             guard let data = data,
-                  let decodedResponse = try? JSONDecoder().decode([Photo].self, from: data) else {
+                  let decodedResponse = self?.parse(data) else {
                 self?.viewState = .error("Ooops! The request failed. Try again later 😳")
                 return
             }

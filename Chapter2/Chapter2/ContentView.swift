@@ -8,7 +8,10 @@
 import SwiftUI
 
 struct ContentView: View {
-    @ObservedObject var remote = Remote()
+    @ObservedObject var remote = Remote<[Photo]>(parse: { data in
+        let response = try? JSONDecoder().decode([Photo].self, from: data)
+        return response ?? []
+    })
 
     var body: some View {
         NavigationView {
@@ -16,8 +19,10 @@ struct ContentView: View {
                 switch remote.viewState {
                 case .loading:
                      ProgressView()
+
                 case .error(let message):
                      Text(message)
+
                 case .content(let photos):
                     List(photos) { photo in
                         NavigationLink(destination: PhotoView(download_url: photo.download_url, aspectRatio: photo.width / photo.height)) {
