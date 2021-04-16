@@ -24,6 +24,7 @@ struct PhotoView: View {
 
             case .error(let message):
                  Text(message)
+                    .padding()
 
             case .content(let image):
                 Image(uiImage: image ?? UIImage())

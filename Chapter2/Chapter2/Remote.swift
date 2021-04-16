@@ -25,7 +25,11 @@ final class Remote<A>: ObservableObject {
         URLSession.shared.dataTask(with: request) { [weak self] data, response, error in
             guard let data = data,
                   let decodedResponse = self?.parse(data) else {
-                self?.viewState = .error("Ooops! The request failed. Try again later 😳")
+
+                DispatchQueue.main.async {
+                    self?.viewState = .error("Ooops! The request failed. Try again later 😳")
+                }
+                
                 return
             }
 

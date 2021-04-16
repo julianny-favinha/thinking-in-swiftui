@@ -22,6 +22,7 @@ struct ContentView: View {
 
                 case .error(let message):
                      Text(message)
+                        .padding()
 
                 case .content(let photos):
                     List(photos) { photo in
