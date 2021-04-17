@@ -41,30 +41,13 @@ extension View {
 
 struct Knob: View {
     @Binding var value: Double // should be between 0 and 1
-    @Binding var shouldUseCustomColor: Bool
     var pointerSize: CGFloat? = nil
     @Environment(\.knobPointerSize) var envPointerSize
     @Environment(\.color) var envColor
     @Environment(\.colorScheme) var colorScheme
 
     var knobColor: Color {
-        if shouldUseCustomColor {
-            return customColor
-        } else {
-            return defaultColor
-        }
-    }
-
-    var customColor: Color {
-        guard let enviromentColor = envColor else {
-            return defaultColor
-        }
-
-        return enviromentColor
-    }
-
-    var defaultColor: Color {
-        return colorScheme == .dark ? Color.white : .black
+        envColor ?? (colorScheme == .dark ? Color.white : .black)
     }
 
     var body: some View {
@@ -87,10 +70,10 @@ struct ContentView: View {
 
     var body: some View {
         VStack {
-            Knob(value: $value, shouldUseCustomColor: $shouldUseCustomColor)
+            Knob(value: $value)
                 .frame(width: 100, height: 100)
                 .knobPointerSize(knobSize)
-                .color(Color(hue: colorHue, saturation: 1, brightness: 1))
+                .color(shouldUseCustomColor ? Color(hue: colorHue, saturation: 1, brightness: 1) : nil)
 
             HStack {
                 Text("Value")
