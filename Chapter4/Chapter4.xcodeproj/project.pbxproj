@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3A1B31912631A2C90068816A /* CollapsibleHStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1B31902631A2C90068816A /* CollapsibleHStack.swift */; };
+		3A1B31962631A4430068816A /* Badge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1B31952631A4430068816A /* Badge.swift */; };
+		3A1B31992631A50B0068816A /* ColorfulSquare.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1B31982631A50B0068816A /* ColorfulSquare.swift */; };
+		3A1B319C2631A5280068816A /* Element.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1B319B2631A5280068816A /* Element.swift */; };
 		3A3C0018262B5F4C0003DDCA /* Chapter4App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3C0017262B5F4C0003DDCA /* Chapter4App.swift */; };
 		3A3C001A262B5F4C0003DDCA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3C0019262B5F4C0003DDCA /* ContentView.swift */; };
 		3A3C001C262B5F4C0003DDCA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A3C001B262B5F4C0003DDCA /* Assets.xcassets */; };
@@ -15,6 +19,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3A1B31902631A2C90068816A /* CollapsibleHStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollapsibleHStack.swift; sourceTree = "<group>"; };
+		3A1B31952631A4430068816A /* Badge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Badge.swift; sourceTree = "<group>"; };
+		3A1B31982631A50B0068816A /* ColorfulSquare.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorfulSquare.swift; sourceTree = "<group>"; };
+		3A1B319B2631A5280068816A /* Element.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Element.swift; sourceTree = "<group>"; };
 		3A3C0014262B5F4C0003DDCA /* Chapter4.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chapter4.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A3C0017262B5F4C0003DDCA /* Chapter4App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chapter4App.swift; sourceTree = "<group>"; };
 		3A3C0019262B5F4C0003DDCA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -35,6 +43,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3A1B318F2631A2A90068816A /* CollapsibleHStack */ = {
+			isa = PBXGroup;
+			children = (
+				3AB524622631114F00A1BB80 /* Collapsible.swift */,
+				3A1B31902631A2C90068816A /* CollapsibleHStack.swift */,
+				3A1B31982631A50B0068816A /* ColorfulSquare.swift */,
+				3A1B319B2631A5280068816A /* Element.swift */,
+			);
+			path = CollapsibleHStack;
+			sourceTree = "<group>";
+		};
+		3A1B31942631A42C0068816A /* Badge */ = {
+			isa = PBXGroup;
+			children = (
+				3A1B31952631A4430068816A /* Badge.swift */,
+			);
+			path = Badge;
+			sourceTree = "<group>";
+		};
 		3A3C000B262B5F4C0003DDCA = {
 			isa = PBXGroup;
 			children = (
@@ -54,7 +81,8 @@
 		3A3C0016262B5F4C0003DDCA /* Chapter4 */ = {
 			isa = PBXGroup;
 			children = (
-				3AB524622631114F00A1BB80 /* Collapsible.swift */,
+				3A1B31942631A42C0068816A /* Badge */,
+				3A1B318F2631A2A90068816A /* CollapsibleHStack */,
 				3A3C0017262B5F4C0003DDCA /* Chapter4App.swift */,
 				3A3C0019262B5F4C0003DDCA /* ContentView.swift */,
 				3A3C001B262B5F4C0003DDCA /* Assets.xcassets */,
@@ -142,7 +170,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A3C001A262B5F4C0003DDCA /* ContentView.swift in Sources */,
+				3A1B31962631A4430068816A /* Badge.swift in Sources */,
 				3A3C0018262B5F4C0003DDCA /* Chapter4App.swift in Sources */,
+				3A1B319C2631A5280068816A /* Element.swift in Sources */,
+				3A1B31912631A2C90068816A /* CollapsibleHStack.swift in Sources */,
+				3A1B31992631A50B0068816A /* ColorfulSquare.swift in Sources */,
 				3AB524642631114F00A1BB80 /* Collapsible.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -8,21 +8,6 @@
 import Foundation
 import SwiftUI
 
-struct Element {
-    let size: CGFloat
-    let color: Color
-}
-
-struct ColorfulSquare: View {
-    let element: Element
-
-    var body: some View {
-        Rectangle()
-            .fill(element.color)
-            .frame(width: element.size, height: element.size)
-    }
-}
-
 struct Collapsible<Element, Content: View>: View {
     var data: [Element]
     var expanded: Bool = false
