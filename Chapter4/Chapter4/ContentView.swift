@@ -15,7 +15,7 @@ struct ContentView: View {
                     Text("Collapsible HStack")
                 }
 
-                NavigationLink(destination: Badge()) {
+                NavigationLink(destination: TextView()) {
                     Text("Badge View")
                 }
             }
@@ -27,5 +27,12 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+    }
+}
+
+extension View {
+    func debug() -> Self {
+        print(Mirror(reflecting: self).subjectType)
+        return self
     }
 }
