@@ -30,15 +30,15 @@ struct CollapsibleHStack: View {
         VStack {
             Collapsible(
                 data: [
-                    Element(size: 70, color: .purple),
-                    Element(size: 40, color: .green),
-                    Element(size: 90, color: .blue)
+                    Configuration(size: 70, color: .purple),
+                    Configuration(size: 40, color: .green),
+                    Configuration(size: 90, color: .blue)
                 ],
                 expanded: expanded,
                 alignment: alignment,
                 spacing: spacing
-            ) { element -> ColorfulSquare in
-                ColorfulSquare(element: element)
+            ) { config -> ColorfulSquare in
+                ColorfulSquare(config: config)
             }
             .border(Color.black)
 

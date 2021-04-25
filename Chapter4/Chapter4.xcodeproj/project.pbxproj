@@ -10,7 +10,6 @@
 		3A1B31912631A2C90068816A /* CollapsibleHStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1B31902631A2C90068816A /* CollapsibleHStack.swift */; };
 		3A1B31962631A4430068816A /* TextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1B31952631A4430068816A /* TextView.swift */; };
 		3A1B31992631A50B0068816A /* ColorfulSquare.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1B31982631A50B0068816A /* ColorfulSquare.swift */; };
-		3A1B319C2631A5280068816A /* Element.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1B319B2631A5280068816A /* Element.swift */; };
 		3A1B31A12631A7EC0068816A /* BadgeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A1B31A02631A7EC0068816A /* BadgeView.swift */; };
 		3A3C0018262B5F4C0003DDCA /* Chapter4App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3C0017262B5F4C0003DDCA /* Chapter4App.swift */; };
 		3A3C001A262B5F4C0003DDCA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A3C0019262B5F4C0003DDCA /* ContentView.swift */; };
@@ -24,7 +23,6 @@
 		3A1B31902631A2C90068816A /* CollapsibleHStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollapsibleHStack.swift; sourceTree = "<group>"; };
 		3A1B31952631A4430068816A /* TextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextView.swift; sourceTree = "<group>"; };
 		3A1B31982631A50B0068816A /* ColorfulSquare.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorfulSquare.swift; sourceTree = "<group>"; };
-		3A1B319B2631A5280068816A /* Element.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Element.swift; sourceTree = "<group>"; };
 		3A1B31A02631A7EC0068816A /* BadgeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeView.swift; sourceTree = "<group>"; };
 		3A3C0014262B5F4C0003DDCA /* Chapter4.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Chapter4.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A3C0017262B5F4C0003DDCA /* Chapter4App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chapter4App.swift; sourceTree = "<group>"; };
@@ -53,7 +51,6 @@
 				3AB524622631114F00A1BB80 /* Collapsible.swift */,
 				3A1B31902631A2C90068816A /* CollapsibleHStack.swift */,
 				3A1B31982631A50B0068816A /* ColorfulSquare.swift */,
-				3A1B319B2631A5280068816A /* Element.swift */,
 			);
 			path = CollapsibleHStack;
 			sourceTree = "<group>";
@@ -180,7 +177,6 @@
 				3A6203F42634AB2D008775A6 /* View+Circle.swift in Sources */,
 				3A1B31962631A4430068816A /* TextView.swift in Sources */,
 				3A3C0018262B5F4C0003DDCA /* Chapter4App.swift in Sources */,
-				3A1B319C2631A5280068816A /* Element.swift in Sources */,
 				3A1B31912631A2C90068816A /* CollapsibleHStack.swift in Sources */,
 				3A1B31992631A50B0068816A /* ColorfulSquare.swift in Sources */,
 				3AB524642631114F00A1BB80 /* Collapsible.swift in Sources */,

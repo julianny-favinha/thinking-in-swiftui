@@ -8,12 +8,17 @@
 import Foundation
 import SwiftUI
 
+struct Configuration {
+    let size: CGFloat
+    let color: Color
+}
+
 struct ColorfulSquare: View {
-    let element: Element
+    let config: Configuration
 
     var body: some View {
         Rectangle()
-            .fill(element.color)
-            .frame(width: element.size, height: element.size)
+            .fill(config.color)
+            .frame(width: config.size, height: config.size)
     }
 }
