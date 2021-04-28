@@ -12,15 +12,12 @@ struct BadgeView: View {
     let count: Int
 
     var body: some View {
-        if count == 0 {
-            Text("\(count)")
-                .font(.caption)
-                .circle()
-                .hidden()
-        } else {
-            Text("\(count)")
-                .font(.caption)
-                .circle()
+        Group {
+            if count != 0 {
+                Text("\(count)")
+                    .font(.caption)
+                    .circle()
+            }
         }
     }
 }
@@ -29,7 +26,13 @@ extension View {
     func badge(count: Int) -> some View {
         self.overlay(
             BadgeView(count: count)
-                .offset(x: 30, y: -20)
+                .alignmentGuide(.trailing, computeValue: {
+                    $0[HorizontalAlignment.center]
+                })
+                .alignmentGuide(.top, computeValue: {
+                    $0[HorizontalAlignment.center]
+                }),
+            alignment: .topTrailing
         )
     }
 }
