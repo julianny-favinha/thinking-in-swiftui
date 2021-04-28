@@ -11,28 +11,34 @@ import SwiftUI
 struct BadgeView: View {
     let count: Int
 
+    @Environment(\.badgeColor) var envColor
+
     var body: some View {
         Group {
             if count != 0 {
-                Text("\(count)")
-                    .font(.caption)
-                    .circle()
+                Circle()
+                    .fill(envColor)
+                    .frame(width: 24, height: 24)
+                    .overlay(
+                        Text("\(count)")
+                            .font(.caption)
+                    )
             }
         }
     }
 }
 
 extension View {
-    func badge(count: Int) -> some View {
+    func badge(count: Int, alignment: Alignment = .topTrailing) -> some View {
         self.overlay(
             BadgeView(count: count)
-                .alignmentGuide(.trailing, computeValue: {
+                .alignmentGuide(alignment.horizontal, computeValue: {
                     $0[HorizontalAlignment.center]
                 })
-                .alignmentGuide(.top, computeValue: {
+                .alignmentGuide(alignment.vertical, computeValue: {
                     $0[HorizontalAlignment.center]
                 }),
-            alignment: .topTrailing
+            alignment: alignment
         )
     }
 }
