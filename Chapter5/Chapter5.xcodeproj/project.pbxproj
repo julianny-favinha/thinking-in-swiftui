@@ -11,6 +11,7 @@
 		3A9F1F43263E34D100011E7F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A9F1F42263E34D100011E7F /* ContentView.swift */; };
 		3A9F1F45263E34D200011E7F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A9F1F44263E34D200011E7F /* Assets.xcassets */; };
 		3A9F1F48263E34D200011E7F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A9F1F47263E34D200011E7F /* Preview Assets.xcassets */; };
+		3AA0E4EF26422601007D0885 /* MatchedGeometryEffectTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AA0E4EE26422601007D0885 /* MatchedGeometryEffectTable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +21,7 @@
 		3A9F1F44263E34D200011E7F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3A9F1F47263E34D200011E7F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		3A9F1F49263E34D200011E7F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3AA0E4EE26422601007D0885 /* MatchedGeometryEffectTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchedGeometryEffectTable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +56,7 @@
 			children = (
 				3A9F1F40263E34D100011E7F /* Chapter5App.swift */,
 				3A9F1F42263E34D100011E7F /* ContentView.swift */,
+				3AA0E4EE26422601007D0885 /* MatchedGeometryEffectTable.swift */,
 				3A9F1F44263E34D200011E7F /* Assets.xcassets */,
 				3A9F1F49263E34D200011E7F /* Info.plist */,
 				3A9F1F46263E34D200011E7F /* Preview Content */,
@@ -140,6 +143,7 @@
 			files = (
 				3A9F1F43263E34D100011E7F /* ContentView.swift in Sources */,
 				3A9F1F41263E34D100011E7F /* Chapter5App.swift in Sources */,
+				3AA0E4EF26422601007D0885 /* MatchedGeometryEffectTable.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

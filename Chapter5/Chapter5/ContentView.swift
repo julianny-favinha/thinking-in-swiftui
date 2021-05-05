@@ -7,10 +7,21 @@
 
 import SwiftUI
 
+
 struct ContentView: View {
+    var cells = [
+        [Text(""), Text("Monday").bold(), Text("Tuesday").bold(), Text("Wednesday").bold()],
+        [Text("Berlin").bold(), Text("Cloudy"), Text("Mostly\nSunny"), Text("Sunny")],
+        [Text("London").bold(), Text("Heavy Rain"), Text("Cloudy"), Text("Sunny")],
+    ]
+
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        VStack(alignment: .leading, spacing: 30) {
+            Text("Using Matched Geometry Effect")
+
+            MatchedGeometryEffectTable(cells: cells)
+                .font(Font.system(.body, design: .serif))
+        }
     }
 }
 
